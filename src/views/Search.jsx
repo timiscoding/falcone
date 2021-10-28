@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import SearchForm from 'components/SearchForm';
 import { useMission } from 'context';
 import { useLocation } from 'wouter';
+import Toast from 'components/Toast';
 
 const Search = () => {
   const { state, dispatch } = useMission();
@@ -67,10 +68,11 @@ const Search = () => {
     return time + distance / speed;
   }, 0);
 
+  let toastMsg = null;
   if (error) {
-    return <p>There was an error. Please reload the page.</p>;
+    toastMsg = 'There was a problem. Try again';
   } else if (loading) {
-    return <p>Loading</p>;
+    toastMsg = 'Loading...';
   }
 
   const onSubmit = () => {
@@ -83,9 +85,9 @@ const Search = () => {
   };
 
   return (
-    <div>
-      <h1>Select planets you want to search in</h1>
-      <p>Total time: {totalTime}</p>
+    <div className="text-center">
+      <Toast message={toastMsg} />
+      <h1>Find Falcone!</h1>
       <SearchForm
         planetChoices={planetChoices}
         vehicleChoices={vehicleChoices}
@@ -93,6 +95,7 @@ const Search = () => {
         onSubmit={onSubmit}
         search={search}
         loading={loading}
+        totalTime={totalTime}
       />
     </div>
   );

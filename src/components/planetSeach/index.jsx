@@ -16,18 +16,17 @@ const PlanetSearch = ({ title, planets, vehicles, onChange, vehicleChecked, plan
   };
 
   return (
-    <div>
-      <h1>{title}</h1>
+    <div className="inline-block  p-8 space-y-3 shadow-md bg-white text-green-500 text-center">
+      <p className="text-xl lg:text-2xl font-medium tracking-wide text-center mb-4">{title}</p>
       <PlanetPicker planets={planets} onChange={onPlanetChange} value={planetValue} />
 
-      {selectedPlanet && (
-        <VehiclePicker
-          name={title}
-          vehicles={vehicles}
-          onChange={onVehicleChange}
-          checked={vehicleChecked}
-        />
-      )}
+      <VehiclePicker
+        disabled={!selectedPlanet}
+        name={title}
+        vehicles={vehicles}
+        onChange={onVehicleChange}
+        checked={vehicleChecked}
+      />
     </div>
   );
 };

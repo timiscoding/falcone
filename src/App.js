@@ -1,10 +1,13 @@
+import Page from 'components/layout/Page';
 import { MissionProvider } from 'context';
 import Routes from 'routes';
 
 function App() {
   return (
     <MissionProvider>
-      <Routes />
+      <Page>
+        <Routes />
+      </Page>
     </MissionProvider>
   );
 }

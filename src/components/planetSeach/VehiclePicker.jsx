@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import clsx from 'clsx';
 
-const VehiclePicker = ({ name, vehicles, onChange, checked }) => {
+const VehiclePicker = ({ name, vehicles, onChange, checked, disabled }) => {
   return (
-    <div>
+    <div className={clsx(disabled ? 'invisible' : 'visible', 'inline-block')}>
       {vehicles.map(({ vehicle, qty, disabled }, i) => (
-        <div key={`${name}-${i}`}>
+        <div key={`${name}-${i}`} className="flex space-x-4 items-center">
           <input
             id={`${name}-${vehicle}`}
             type="radio"

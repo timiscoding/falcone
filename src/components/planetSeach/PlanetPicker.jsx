@@ -3,9 +3,13 @@ import PropTypes from 'prop-types';
 
 const PlanetPicker = ({ onChange, planets, value }) => {
   return (
-    <div>
-      <select onChange={(e) => onChange(e.target.value)} value={value}>
-        <option value="">select</option>
+    <div className="text-center">
+      <select
+        onChange={(e) => onChange(e.target.value)}
+        value={value}
+        className="p-1 border-green-400 border-2 rounded-md"
+      >
+        <option value="">Select planet</option>
         {planets.map(({ name }) => (
           <option value={name} key={name}>
             {name}

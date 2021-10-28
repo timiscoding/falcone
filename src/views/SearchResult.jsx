@@ -7,11 +7,11 @@ const SearchResult = () => {
   const { state, dispatch } = useMission();
   const setLocation = useLocation()[1];
 
-  const { status, totalTime, planet } = state.search.result;
-
   if (!state.search.result) {
     return <Redirect to="/" />;
   }
+
+  const { status, totalTime, planet } = state.search.result;
 
   const onClickReset = () => {
     dispatch({ type: 'reset_search' });
@@ -20,7 +20,7 @@ const SearchResult = () => {
 
   return (
     <div>
-      Search Result
+      <h1 className="text-center">Search Result</h1>
       <ResultMessage status={status} stats={{ totalTime, planet }} onClickReset={onClickReset} />
     </div>
   );

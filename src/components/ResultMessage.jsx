@@ -9,10 +9,10 @@ const ResultMessage = ({ status, stats, onClickReset }) => {
     message = 'Mission failed. Queen Al Falcone might return home soon.';
   }
   return (
-    <div>
-      <p>{message}</p>
+    <div className="flex flex-col items-center space-y-4">
+      <p className="text-lg text-center">{message}</p>
       {status === 'success' && (
-        <div>
+        <div className="inline-block">
           <p>Time taken: {stats.totalTime}</p>
           <p>Planet found: {stats.planet}</p>
         </div>
