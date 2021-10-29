@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PlanetSearch from './planetSeach';
+import PlanetSearch from '../planetSeach';
 
 const SearchForm = ({
   onSubmit,

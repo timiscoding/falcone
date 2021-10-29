@@ -1,4 +1,4 @@
-import Page from 'components/layout/Page';
+import Page from 'components/layout';
 import { MissionProvider } from 'context';
 import Routes from 'routes';
 

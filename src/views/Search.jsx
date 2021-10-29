@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import SearchForm from 'components/SearchForm';
+import SearchForm from 'components/searchForm';
 import { useMission } from 'context';
 import { useLocation } from 'wouter';
-import Toast from 'components/Toast';
+import Toast from 'components/toast';
 
 /* removes black listed planet names from planets list
    @param {planet[]} planets - array of planet { name, distance }

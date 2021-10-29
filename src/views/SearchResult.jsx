@@ -1,4 +1,4 @@
-import ResultMessage from 'components/ResultMessage';
+import ResultMessage from 'components/resultMessage';
 import { useMission } from 'context';
 import React from 'react';
 import { Redirect, useLocation } from 'wouter';

@@ -4,7 +4,10 @@ import clsx from 'clsx';
 
 const VehiclePicker = ({ name, vehicles, onChange, checked, disabled }) => {
   return (
-    <div className={clsx(disabled ? 'invisible' : 'visible', 'inline-block')}>
+    <div
+      className={clsx(disabled ? 'invisible' : 'visible', 'inline-block')}
+      data-testid="vehicle-picker"
+    >
       {vehicles.map(({ vehicle, qty, disabled }, i) => (
         <div key={`${name}-${i}`} className="flex space-x-4 items-center">
           <input
